@@ -1,0 +1,7 @@
+Hàm Max: 
+Trả về độ dài lớn nhất trong ba chuỗi số.
+
+Hàm func:
+Chuyển ba số x, y, z thành chuỗi.
+Duyệt qua từng chữ số của ba chuỗi. Nếu chữ số nào trùng nhau ở cả ba chuỗi, nó sẽ được đếm và lưu vào kết quả.
+In ra số lượng và các chữ số trùng nhau.

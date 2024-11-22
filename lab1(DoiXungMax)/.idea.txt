@@ -1,0 +1,13 @@
+Hàm check:
+Kiểm tra xem chuỗi có phải là chuổi đối xứng hay không bằng cách so sánh các ký tự ở hai đầu và tiến dần vào giữa.
+
+Hàm func:
+Nhận vào một số nguyên num, chuyển đổi thành chuỗi vec.
+Tạo một mảng 2D vec_temp để lưu tần suất xuất hiện của từng chữ số từ 0 đến 9.
+Duyệt qua từng chữ số trong vec và tăng tần suất tương ứng trong vec_temp.
+Kiểm tra có bao nhiêu chữ số có tần suất lẻ:
+- Nếu có nhiều hơn một chữ số có tần suất lẻ, in "NO" và kết thúc.
+- Nếu có tối đa một chữ số có tần suất lẻ, tạo ra chuỗi đối xứng.
+Xây dựng chuỗi kết quả:
+- Các chữ số có tần suất chẵn được đặt đối xứng ở hai đầu chuỗi.
+- Nếu có một chữ số tần suất lẻ, nó sẽ được đặt ở giữa.

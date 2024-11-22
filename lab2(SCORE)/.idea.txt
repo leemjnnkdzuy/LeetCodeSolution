@@ -1,0 +1,5 @@
+Hàm func:
+Nhận một chuỗi và duyệt qua từng ký tự.
+Khi gặp 'C', tăng biến temp và cộng temp vào tổng score.
+Khi gặp 'N', đặt lại temp về 0.
+Trả về tổng score.
