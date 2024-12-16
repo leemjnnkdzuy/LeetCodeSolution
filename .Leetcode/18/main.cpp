@@ -13,24 +13,27 @@ vector<vector<int>> fourSum(vector<int>& nums, int target) {
     vector<vector<int>> res;
     sort(nums.begin(), nums.end());
 	int a, b, c, d;
-	for (int i = 0; i < nums.size() - 3; i++) {
-        if (i > 0 && nums[i] == nums[i - 1]) continue;
 
-		a = nums[i];
+	for (int i = 0; i < nums.size() - 3; i++) {
+		if (nums[i] == 0 && nums.size() == 1)
+			return res;
+		if (i > 0 && nums[i] == nums[i - 1]) continue;
+
+
 		for (int j = i + 1; j < nums.size() - 2; j++) {
             if (j > i + 1 && nums[j] == nums[j - 1]) continue;
             
             int left = j + 1;
             int right = nums.size() - 1;
-            b = nums[j];
+
             while (left < right) {
 
 				c = nums[left];
 				d = nums[right];
-                int sum = a + b + c + d;
+                int sum = nums[i] + nums[j] + nums[left] + nums[right];
                 
                 if (sum == target) {
-                    res.push_back({a, b, d, c});
+                    res.push_back({nums[i], nums[j], nums[left], nums[right]});
                     
                     while (left < right && nums[left] == nums[left + 1]) left++;
                     while (left < right && nums[right] == nums[right - 1]) right--;
