@@ -35,44 +35,6 @@ vector<int> getFinalState(vector<int>& nums, int k, int multiplier) {
 }
 
 
-double cal(vector<vector<int>>& classes) {
-    double res = 0;
-
-    for (int i = 0; i < classes.size(); i++) {
-        res += (double)classes[i][0] / (double)classes[i][1];
-    }
-
-    return res / classes.size();
-}
-
-double maxAverageRatio(vector<vector<int>>& classes, int extraStudents) {
-
-    while (extraStudents != 0) {
-        int flag = 0;
-        double max = cal(classes);
-
-        for (int i = 0; i < classes.size(); i++) {
-            classes[i][0]++;
-            classes[i][1]++;
-
-            if (cal(classes) > max) {
-                max = cal(classes);
-                flag = i;
-            }
-
-            classes[i][0]--;
-            classes[i][1]--;
-        }
-
-        classes[flag][0]++;
-        classes[flag][1]++;
-
-        extraStudents--;
-    }
-
-    return cal(classes);
-}
-
 void func(){
 	vector<int> nums;
 	int a, k, multiplier;
