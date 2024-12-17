@@ -4,6 +4,8 @@
 		"iostream": "cpp",
 		"utility": "cpp",
 		"xutility": "cpp",
-		"vector": "cpp"
+		"vector": "cpp",
+		"random": "cpp",
+		"limits": "cpp"
 	}
 }
