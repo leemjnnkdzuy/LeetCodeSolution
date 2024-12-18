@@ -11,26 +11,21 @@ void run_debug(bool check){
 
 vector<vector<int>> fourSum(vector<int>& nums, int target) {
     vector<vector<int>> res;
+	if (nums.size() < 4) return res;
     sort(nums.begin(), nums.end());
-	int a, b, c, d;
-
-	for (int i = 0; i < nums.size() - 3; i++) {
-		if (nums[i] == 0 && nums.size() == 1)
-			return res;
+	for (long long i = 0; i < nums.size() - 3; i++) {
 		if (i > 0 && nums[i] == nums[i - 1]) continue;
 
 
-		for (int j = i + 1; j < nums.size() - 2; j++) {
+		for (long long j = i + 1; j < nums.size() - 2; j++) {
             if (j > i + 1 && nums[j] == nums[j - 1]) continue;
             
-            int left = j + 1;
-            int right = nums.size() - 1;
+            long long left = j + 1;
+            long long right = nums.size() - 1;
 
             while (left < right) {
 
-				c = nums[left];
-				d = nums[right];
-                int sum = nums[i] + nums[j] + nums[left] + nums[right];
+                long long sum = (long long)nums[i] + (long long)nums[j] + (long long)nums[left] + (long long)nums[right];
                 
                 if (sum == target) {
                     res.push_back({nums[i], nums[j], nums[left], nums[right]});
@@ -51,7 +46,6 @@ vector<vector<int>> fourSum(vector<int>& nums, int target) {
     
     return res;
 }
-
 
 void func(){
 	int target, a;
