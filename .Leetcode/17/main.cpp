@@ -10,39 +10,39 @@ void run_debug(bool check){
 }
 
 vector<string> letterCombinations(string digits) {
-	vector<string> res = {""};
-	if(digits.length() == 0)	
-		return res;
+    if (digits.empty()) return {};
 
-	vector<string> tag2 = {"a", "b", "c"};
-	vector<string> tag3 = {"d", "e", "f"};
-	vector<string> tag4 = {"g", "h", "i"};
-	vector<string> tag5 = {"j", "k", "i"};
-	vector<string> tag6 = {"m", "n", "o"};
-	vector<string> tag7 = {"p", "q", "r", "s"};
-	vector<string> tag8 = {"t", "v", "u"};
-	vector<string> tag9 = {"w", "x", "y", "z"};
+    vector<string> res;
+    vector<string> digitToLetters = {
+        "",
+        "",
+        "abc",
+        "def",
+        "ghi",
+        "jkl",
+        "mno",
+        "pqrs",
+        "tuv",
+        "wxyz"
+    };
 
-	int lenght_res = 1;
-	for (int i = 0; i < digits.length() - 1; i++)
-	{
-		if (digits[i] == '2' || 
-			digits[i] == '3' || 
-			digits[i] == '4' || 
-			digits[i] == '5' || 
-			digits[i] == '6' || 
-			digits[i] == '8') {
-			lenght_res *= 3;
-		} else if (digits[i] == '7' || digits[i] == '9') {
-			lenght_res *= 4;
-		}
-	}
+    string combination;
+    function<void(int)> backtrack = [&](int index) {
+        if (index == digits.size()) {
+            res.push_back(combination);
+            return;
+        }
 
-	res.resize(lenght_res);
+        string letters = digitToLetters[digits[index] - '0'];
+        for (char letter : letters) {
+            combination.push_back(letter);
+            backtrack(index + 1);
+            combination.pop_back();
+        }
+    };
 
-	
-
-	return res;
+    backtrack(0);
+    return res;
 }
 
 void func(){
