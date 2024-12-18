@@ -1,5 +1,4 @@
 #include <vector>
-#include <conio.h>
 #include <iostream>
 
 using namespace std;
@@ -52,6 +51,5 @@ int main(){
     Add(arr);
     cout << "So lien tiep lon nhat trong mang la : " << func(arr);
 
-    _getch();
     return 0;
 }
