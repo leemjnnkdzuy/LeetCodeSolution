@@ -3,6 +3,8 @@
 		"iostream": "cpp",
 		"chrono": "cpp",
 		"ranges": "cpp",
-		"variant": "cpp"
+		"variant": "cpp",
+		"cmath": "cpp",
+		"random": "cpp"
 	}
 }
