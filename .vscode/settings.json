@@ -5,6 +5,14 @@
 		"ranges": "cpp",
 		"variant": "cpp",
 		"cmath": "cpp",
-		"random": "cpp"
+		"random": "cpp",
+		"*.tcc": "cpp",
+		"string": "cpp",
+		"unordered_map": "cpp",
+		"unordered_set": "cpp",
+		"string_view": "cpp",
+		"format": "cpp",
+		"deque": "cpp",
+		"vector": "cpp"
 	}
 }
