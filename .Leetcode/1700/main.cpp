@@ -10,23 +10,23 @@ void test(bool check)
 
 int countStudents(vector<int> &students, vector<int> &sandwiches)
 {
-	int res = students.size();
-
-	int i = 0;
-	int j = 0;
-	while (i < sandwiches.size() || j < students.size())
+	int res = 0;
+	while (!students.empty() && res < students.size())
 	{
-		if (sandwiches[i] == students[j])
+		if (students.front() == sandwiches.front())
 		{
+			students.erase(students.begin());
 			sandwiches.erase(sandwiches.begin());
-			students.erase(students.begin());
-		} else {
-			students.erase(students.begin());
+			res = 0;
 		}
-		
+		else
+		{
+			students.push_back(students.front());
+			students.erase(students.begin());
+			res++;
+		}
 	}
-
-	return res;
+	return students.size();
 }
 
 void func()
