@@ -11,9 +11,9 @@ string reformatNumber(string number)
 {
 	string res, temp;
 
-	for (int i = 0; i < number.size(); i++)
+	for (int i = 0; i < number.length(); i++)
 	{
-		char c = res[i];
+		char c = number[i];
 		if (c == '0' ||
 			c == '1' ||
 			c == '2' ||
@@ -26,9 +26,38 @@ string reformatNumber(string number)
 			c == '9')
 			temp.push_back(c);
 	}
-	
 
-	return temp;
+	res = "";
+	int n = temp.length();
+	int i = 0;
+
+	while (i < n - 4)
+	{
+		res += temp.substr(i, 3);
+		res += '-';
+		i += 3;
+	}
+
+	if (n - i == 4)
+	{
+		res += temp.substr(i, 2);
+		res += '-';
+		res += temp.substr(i + 2, 2);
+	}
+	else if (n - i == 3)
+	{
+		res += temp.substr(i, 3);
+	}
+	else if (n - i == 2)
+	{
+		res += temp.substr(i, 2);
+	}
+	else if (n - i == 1)
+	{
+		res += temp.substr(i, 1);
+	}
+
+	return res;
 }
 
 void func()
